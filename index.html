@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Chatbot by Johanan Thiviyaraj 🤖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    h1 { margin: 0; }
+    .container { max-width: 900px; margin: auto; }
+    section { margin: 2rem 0; }
+    h2 {
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    ul { padding-left: 1.2rem; }
+    .chatbot {
+      background-color: #eef2f5;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    #chatlog {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+    #chatInput {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Johanan Thiviyaraj’s AI Chatbot 🤖</h1>
+    <p>Unlock the future of intelligence with a friendly guide to AI</p>
+  </header>
+<img src="LMHcUj3enzxy7wof2LWyY.jpeg" alt="AI Banner" style="display:block; margin:2rem auto; max-width:600px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.1);">
+  <div class="container">
+
+    <section>
+      <h2>🧠 What Is Artificial Intelligence?</h2>
+      <p>Artificial Intelligence (AI) is the ability of machines to simulate human thinking and decision-making. It powers technologies like self-driving cars, voice assistants, and smartwatches.</p>
+    </section>
+
+    <section>
+      <h2>📚 Branches of AI</h2>
+      <ul>
+        <li><strong>Machine Learning:</strong> Learning from data to improve accuracy</li>
+        <li><strong>Deep Learning:</strong> Neural networks inspired by the brain</li>
+        <li><strong>NLP:</strong> Understanding human language</li>
+        <li><strong>Computer Vision:</strong> Interpreting images and video</li>
+        <li><strong>Expert Systems:</strong> Rule-based decision-making</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌍 Real-world Applications</h2>
+      <ul>
+        <li>Smartwatches (like GT4 Pro) for health tracking</li>
+        <li>Medical diagnostics using AI scans and analysis</li>
+        <li>Tamil cultural tech: integrating AI into Villupattu storytelling</li>
+        <li>Chatbots, self-driving vehicles, and automated customer support</li>
+      </ul>
+    </section>
+
+    <section class="chatbot">
+      <h2>💬 Chat with Your AI Bot</h2>
+      <div id="chatlog">Hello I'm AI by Johanan Thiviyaraj! Ask me anything about AI.</div>
+      <input type="text" id="chatInput" placeholder="Type your question..." onkeydown="handleChat(event)">
+    </section>
+
+  </div>
+
+  <script>
+    function handleChat(e) {
+      if (e.key === "Enter") {
+        const input = document.getElementById("chatInput").value;
+        const response = chatbotResponse(input);
+        document.getElementById("chatlog").innerHTML += `<p><strong>You:</strong> ${input}</p><p><strong>Bot:</strong> ${response}</p>`;
+        document.getElementById("chatInput").value = "";
+        document.getElementById("chatlog").scrollTop = document.getElementById("chatlog").scrollHeight;
+      }
+    }
+
+    function chatbotResponse(msg) {
+      const lower = msg.toLowerCase();
+      if (lower.includes("ai")) return "AI (Artificial Intelligence) enables machines to think and learn like humans!";
+      if (lower.includes("machine learning")) return "Machine Learning is the process of teaching machines to learn from data.";
+      if (lower.includes("deep learning")) return "Deep Learning uses multi-layered neural networks to solve complex tasks.";
+      if (lower.includes("natural language")) return "NLP allows computers to understand and respond in human language.";
+      if (lower.includes("smartwatch")) return "Smartwatches like GT4 Pro use AI for health monitoring and smart features.";
+      if (lower.includes("villupattu")) return "Villupattu with AI brings tech and Tamil tradition together for storytelling.";
+      return "I'm loaded with AI knowledge, try asking about branches, applications, or Tamil tech!";
+    }
+  </script>
+
+</body>
+</html>
